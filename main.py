@@ -1,4 +1,4 @@
-name = input("First of all how can I call you: ")
+from data import modules, submitted_time, questions_reason, results
 
 def greeting():
     name = input("First of all how can I call you: ")
@@ -19,3 +19,12 @@ def answer_to_question(answer):
             return False
         else:
             answer = input("Oops. Sorry I didn't get your answer. Please, write yes or no: ")
+
+def number_modules():
+    """Convert the modules dictionary to list and number each modules that given in dictionary 'modules'."""
+    i=1
+    global modules_list
+    modules_list = list(modules)
+    for module in modules_list:
+        print(f'{i}. {module}')
+        i+=1
