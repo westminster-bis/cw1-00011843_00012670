@@ -87,5 +87,29 @@ def determine_user_late_submission(mark):
     else:
         on_time()
 
+def on_time(mark):
+    """The function that gets the overall mark when student has submitted CW on time"""
+    print(f'{submitted_time.get("on_time")}. \nYour overall mark is {mark}')
+
+
+
+def within_24_hours(mark):
+    """The function gets the overall mark when student has submitted CW within 24 hours after the deadline."""
+
+    print(submitted_time.get("within_24"))
+    valid_reason = input(questions_reason["is_valid_reason"]) 
+    if answer_to_question(valid_reason):
+        mc_claim = input(questions_reason.get("mc_claim_acceptance"))
+        if answer_to_question(mc_claim):
+            print(f'{results["full_mark"]}. \nYour overall mark is {mark}')
+        else:
+            if mark-10 < 40:
+                mark == 40
+                print(f'{results["minus_10"]}. \nYour overall mark is {mark}')
+            else:
+                mark = mark-10
+                print(f'{results["minus_10"]}. \nYour overall mark is {mark}') 
+
+
 
 
