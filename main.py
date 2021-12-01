@@ -52,3 +52,18 @@ def determine_module_deadline():
     global module_deadline
 
     module_deadline = datetime.strptime(selected_module_deadline, "%d/%m/%Y %I:%M:%S %p")
+
+
+def check_user_date_validity():
+    """The function checks whether student is submitted right format of date and time that user have submitted his/her CW."""
+
+    while True:
+        try:
+            submission_date_string = input("When did you submit it actually? Send it as a format of 'DD/MM/YYYY H:M:S' (e.g. 25/12/2021 19:45:26): ")
+            global student_submission_date 
+            student_submission_date = datetime.strptime(submission_date_string, "%d/%m/%Y %H:%M:%S")
+            student_submission_date = student_submission_date
+            break
+                
+        except: 
+            print("You've entered wrong format of date and time. Please, try again.")
