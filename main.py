@@ -111,5 +111,16 @@ def within_24_hours(mark):
                 print(f'{results["minus_10"]}. \nYour overall mark is {mark}') 
 
 
+def main():
+    greeting()
+    
+    determine_module_deadline()
+    
+    check_user_date_validity()
+    
+    student_mark = int(input("Please enter your mark of that module that you chose: "))
+
+    determine_user_late_submission(student_mark)
+
 
 
