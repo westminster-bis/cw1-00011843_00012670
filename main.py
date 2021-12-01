@@ -1,8 +1,8 @@
 name = input("First of all how can I call you: ")
 
-greeting = f'Hey {name} 👋. How are you doing? and your study in WIUT?'
-
-print(greeting)
+def greeting():
+    name = input("First of all how can I call you: ")
+    print(f"Hey {name} 👋. How are you doing? and your study in WIUT? \nLet's talk about your CW assignments.")
 
 def answer_to_question(answer):
     """ 
