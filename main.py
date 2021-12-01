@@ -1,4 +1,5 @@
 from data import modules, submitted_time, questions_reason, results
+from datetime import datetime, timedelta
 
 def greeting():
     name = input("First of all how can I call you: ")
@@ -28,3 +29,23 @@ def number_modules():
     for module in modules_list:
         print(f'{i}. {module}')
         i+=1
+
+
+
+def determine_user_late_submission(mark):
+    """The function that checks and calculate the time that student has submitted lately or not."""
+    
+    loading()
+    if student_submission_date > module_deadline:
+        if student_submission_date - module_deadline <= timedelta(hours=24):
+            within_24_hours(mark)
+            
+        else:
+            if student_submission_date - module_deadline <= timedelta(days=5):
+                within_5_days(mark)
+            
+            else:
+                more_than_5_days(mark)
+            
+    else:
+        on_time()
