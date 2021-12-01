@@ -74,10 +74,11 @@ def determine_user_late_submission(mark):
                 more_than_5_days(mark)
             
     else:
-        on_time()
+        on_time(mark)
 
 def on_time(mark):
     """The function that gets the overall mark when student has submitted CW on time"""
+
     print(f'{submitted_time.get("on_time")}. \nYour overall mark is {mark}')
 
 
@@ -93,12 +94,18 @@ def within_24_hours(mark):
             print(f'{results["full_mark"]}. \nYour overall mark is {mark}')
         else:
             if mark-10 < 40:
-                mark == 40
+                mark = 40
                 print(f'{results["minus_10"]}. \nYour overall mark is {mark}')
             else:
                 mark = mark-10
                 print(f'{results["minus_10"]}. \nYour overall mark is {mark}') 
-
+    else:
+            if mark-10 < 40:
+                mark = 40
+                print(f'{results["minus_10"]}. \nYour overall mark is {mark}')
+            else:
+                mark = mark-10
+                print(f'{results["minus_10"]}. \nYour overall mark is {mark}') 
 
 
 def within_5_days(mark):
