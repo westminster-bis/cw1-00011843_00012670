@@ -1,9 +1,12 @@
 from data import modules, submitted_time, questions_reason, results
+from loading import loading
 from datetime import datetime, timedelta
+
 
 def greeting():
     name = input("First of all how can I call you: ")
     print(f"Hey {name} 👋. How are you doing? and your study in WIUT? \nLet's talk about your CW assignments.")
+    loading()
 
 
 
@@ -29,6 +32,8 @@ def determine_module_deadline():
     selected_module = modules_list[selected_number]
 
     selected_module_deadline = modules[selected_module]
+
+    loading()
 
     print(f'You are supposed to submit your CW till {selected_module_deadline}.')
 
