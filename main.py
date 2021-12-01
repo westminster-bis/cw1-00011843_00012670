@@ -95,17 +95,6 @@ def within_24_hours(mark):
                 print(f'{results["minus_10"]}. \nYour overall mark is {mark}') 
 
 
-def main():
-    greeting()
-    
-    determine_module_deadline()
-    
-    check_user_date_validity()
-    
-    student_mark = int(input("Please enter your mark of that module that you chose: "))
-
-    determine_user_late_submission(student_mark)
-
 
 def within_5_days(mark):
     """The function gets the overall mark when student has submitted CW within 5 days after the deadline."""
@@ -149,3 +138,16 @@ def answer_to_question(answer):
             return False
         else:
             answer = input("Oops. Sorry I didn't get your answer. Please, write yes or no: ")
+
+
+
+def main():
+    greeting()
+    
+    determine_module_deadline()
+    
+    check_user_date_validity()
+    
+    student_mark = int(input("Please enter your mark of that module that you chose: "))
+
+    determine_user_late_submission(student_mark)
