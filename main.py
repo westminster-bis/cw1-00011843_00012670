@@ -138,3 +138,16 @@ def answer_to_question(answer):
             return False
         else:
             answer = input("Oops. Sorry I didn't get your answer. Please, write yes or no: ")
+
+
+
+def main():
+    greeting()
+    
+    determine_module_deadline()
+    
+    check_user_date_validity()
+    
+    student_mark = int(input("Please enter your mark of that module that you chose: "))
+
+    determine_user_late_submission(student_mark)
