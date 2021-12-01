@@ -5,22 +5,6 @@ def greeting():
     name = input("First of all how can I call you: ")
     print(f"Hey {name} 👋. How are you doing? and your study in WIUT? \nLet's talk about your CW assignments.")
 
-def answer_to_question(answer):
-    """ 
-    The function that if user enters "No", (alternatives for No: "NO", "nO", "N" or just "n") it will return False. 
-    When the user enters "Yes" (alternatives for Yes: "YES", "YEs", "yES" "Y" or just "y") it will return True.
-    In another case when the user enters the invalid answer it will repeat the question. 
-
-    """
-    while answer:
-        answer = answer.lower()
-        if answer == 'yes' or answer == 'y':
-            return True
-        elif answer == 'no' or answer == 'n':
-            return False
-        else:
-            answer = input("Oops. Sorry I didn't get your answer. Please, write yes or no: ")
-
 
 
 def number_modules():
@@ -112,4 +96,45 @@ def within_24_hours(mark):
 
 
 
+def within_5_days(mark):
+    """The function gets the overall mark when student has submitted CW within 5 days after the deadline."""
 
+    print(submitted_time.get("within_5_days"))
+    valid_reason = input(questions_reason["is_valid_reason"]) 
+    if answer_to_question(valid_reason):
+        mc_claim = input(questions_reason.get("mc_claim_acceptance"))
+        if answer_to_question(mc_claim):
+            print(f'{results["full_mark"]}. \nYour overall mark is {mark}')
+        else:
+            print(f'{results["zero_mark"]}. \nYour overall mark is {mark-mark}')
+    else:
+        print(f'{results["zero_mark"]}. \nYour overall mark is {mark-mark}')
+
+
+
+def more_than_5_days(mark):
+    """The function gets the overall mark when student has submitted CW more than 5 days after the deadline."""
+
+    print(submitted_time.get("more_than_5_days"))
+    valid_reason = input(questions_reason["is_valid_reason"])
+    if answer_to_question(valid_reason):
+        print(results["deferral"])
+    else:
+        print(f'{results["zero_mark"]}. \nYour overall mark is {mark-mark}')
+
+
+def answer_to_question(answer):
+    """ 
+    The function that if user enters "No", (alternatives for No: "NO", "nO", "N" or just "n") it will return False. 
+    When the user enters "Yes" (alternatives for Yes: "YES", "YEs", "yES" "Y" or just "y") it will return True.
+    In another case when the user enters the invalid answer it will repeat the question. 
+
+    """
+    while answer:
+        answer = answer.lower()
+        if answer == 'yes' or answer == 'y':
+            return True
+        elif answer == 'no' or answer == 'n':
+            return False
+        else:
+            answer = input("Oops. Sorry I didn't get your answer. Please, write yes or no: ")
