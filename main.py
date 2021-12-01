@@ -1,3 +1,4 @@
+import datetime
 from data import modules, submitted_time, questions_reason, results
 
 def greeting():
@@ -20,6 +21,19 @@ def answer_to_question(answer):
         else:
             answer = input("Oops. Sorry I didn't get your answer. Please, write yes or no: ")
 
+
+
+def number_modules():
+    """Convert the modules dictionary to list and number each modules that given in dictionary 'modules'."""
+    i=1
+    global modules_list
+    modules_list = list(modules)
+    for module in modules_list:
+        print(f'{i}. {module}')
+        i+=1
+
+
+
 def determine_module_deadline():
     """The function determines the deadline date of module that user has chosen from 'modules' dictionary"""
 
@@ -32,7 +46,6 @@ def determine_module_deadline():
     selected_module = modules_list[selected_number]
 
     selected_module_deadline = modules[selected_module]
-    loading()
 
     print(f'You are supposed to submit your CW till {selected_module_deadline}.')
 
